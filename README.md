@@ -1,24 +1,30 @@
 # CAPSTONE-PROJECT
 
 ## Project Outline
-Project Title: Sales Transaction and Customer Subsription Analysis
-Project Overview For Sales Data
-Project Overview For Customer Data
-Column Description For Sales Data
-Column Description for Customer Data
-Data Sources
-Tools Used
-Data Cleaning and Preparations
-Exploratory Data Analysis
-Data Analysis
-Data Visualization
+- [Project Title](#project-title)
+- [Project Overview For Sales Data](#project-overview-for-sales-data)
+- [Project Overview For Customer Data](#project-overview-for-customer-data)
+- [Column Description For Sales Data](#column-description-for-sales-data)
+- [Column Description for Customer Data](#column-description-for-customer-data)
+- [Data Sources](#data-sources)
+- [Tools Used](#tools-used)
+- [Data Cleaning and Preparations](#data-cleaning-and-preparations)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Data Analysis](#data-analysis)
+- [Data Visualization](#data-visualization)
+- [Key Insights](#key-insights)
+- [Limitation](#limitation)
+- [Conclusion](#conclusion)
 
 
-## Project Title: Sales Transaction and Customer Subsription Analysis
+## Project Title
+Sales Transaction and Customer Subsription Analysis
 
-### Project Overview For Sales Data: This analysis aims to uncover insights in the sales data, focusing on sales trends, product performance, and customer distribution by region. By analysisng the various parameters in the data received, we seek to gather enough insight which then enables us to tell compelling stories around our data from the insight gotten and to know the best performance for our data.
+### Project Overview For Sales Data
+This analysis aims to uncover insights in the sales data, focusing on sales trends, product performance, and customer distribution by region. By analysisng the various parameters in the data received, we seek to gather enough insight which then enables us to tell compelling stories around our data from the insight gotten and to know the best performance for our data.
 
-### Project Overview For Customer Data: This analysis aims to uncover insights in customer subscription patterns and revenue. By analysisng the various parameters in the data received, we seek to gather enough insight which then enables us to tell compelling stories around our data from the insight gotten and to know the best performance for our data.
+### Project Overview For Customer Data
+This analysis aims to uncover insights in customer subscription patterns and revenue. By analysisng the various parameters in the data received, we seek to gather enough insight which then enables us to tell compelling stories around our data from the insight gotten and to know the best performance for our data.
 
 ### Column Description For Sales Data
 -  OrderID: A unique identifier for each order.
@@ -41,7 +47,8 @@ Data Visualization
   - Revenue: Revenue generated from the customer's subscription.
   - Subscription Duration: The duration of the subscription period which is calculated as (SubscriotionEnd - SubscriptionStart).
     
-### Data Sources: The main source of data used here are the Data Sales.csv and Customer.csv and this is an open source data that can be downloaded freely from an open source online such as Kaggle, FRED or any other data repository site.
+### Data Sources
+The main source of data used here are the Data Sales.csv and Customer.csv and this is an open source data that can be downloaded freely from an open source online such as Kaggle, FRED or any other data repository site.
 
 ### Tools Used:
 - Microsoft Excel [Download Here](https://www.microsoft.com)
@@ -92,43 +99,60 @@ Data Visualization
       
   ### Data Analysis
   This is where we include some basic lines of codes, queries or even some of the DAX expressions ued during your analysis;
-  
-  Select * From Table Name = SalesData
 
-  Select * From Table Name = CustomerData
+  Select * from [LITA Capstone Sales Data] = SalesData
+
+  Select * From [LITA Capstone Customer Data] = CustomerData
 
   ### Data Visualization
 
 ![Pivot for SalesData](https://github.com/user-attachments/assets/75bb9b32-073c-4347-8ac1-6f557c6f406d)
 
+
 ![Pivot for CustomerData](https://github.com/user-attachments/assets/88e6debe-622b-41f2-8cd3-74521add5ac8)
+
 
 ![Pivot Customer Data](https://github.com/user-attachments/assets/38121f7a-c18f-4525-ab6e-31bca05a37d3)
 
 
 ![SalesData](https://github.com/user-attachments/assets/96617d33-0bf6-48de-8462-80a4eb3ccde6)
 
+
 ![SalesData2](https://github.com/user-attachments/assets/140558c7-70fc-461d-94b2-fdddfabeb4a6)
+
 
 ![CustomerData](https://github.com/user-attachments/assets/1c8b341b-dcbe-40f8-832c-ed9183506ac4)
 
 
 ![CustomerData2](https://github.com/user-attachments/assets/84b6b84d-f40b-45d1-9533-f51636e1e537)
 
+
 ![BI for Sales Data](https://github.com/user-attachments/assets/50ef9661-4481-451a-b6b1-a3cf016b6563)
+
 
 ![BI for SalesData](https://github.com/user-attachments/assets/f6a71e4c-a727-4847-a101-9b2ab172f052)
 
+
 ![BI for CustomerData](https://github.com/user-attachments/assets/3895e228-1ac8-44f8-9f66-add2a1cea431)
 
+## Key Insights
+### Sales Overview
+- **Total Sales**:    $2,101,090 was the total sales across all orders.
+- **Revenue Trends**: Consistent growth, with peak sales in shoes.
+- **Active vs. Canceled Subscriptions**: East Region is active, with a cancellation rate of 25.11%.
 
-## Limitations
+### Top-Performing Products
+- **Best-Selling Products**: Product such as shoes, shirt, and Hat generated the highest revenue.
+- **High-Demand Categories**: Basic Subscription showed substantial demand.
 
-- **Granularity**: Weekly sales breakdowns were not available, which may obscure finer trends.
+### Regional Breakdown
+- **Regional Sales Distribution**:Southern Region led in sales, contributing 44% of total revenue.
+- **Subscription Cancellations**: Highest in Southern Region, accounting for 14.99% of total cancellations.
 
+## Limitation
+-Granularity**: Weekly sales breakdowns were not available, which may obscure finer trends.
 
 
 ## Conclusion
 The analysis highlights key areas for potential growth, such as expanding top-performing products and improving retention in regions with high cancellations. The dashboard can serve as a valuable tool for ongoing performance monitoring.
-
 
