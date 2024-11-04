@@ -36,11 +36,54 @@
   3. for data visualization
      
 - SQL-Structured Query Lanuage
-    1. for Quering data
-    2. for exploring data
+  1. for Quering data
+  2. for exploring data
        
 - Power BI
-    1. for data visualization
-    2. for dashboard creation
+  1. for data visualization
+  2. for dashboard creation
 
-Power BI is used to create a visual dashboard, and SQL queries facilitate data exploration and summarization.
+  ### Data Cleaning and Preparations
+  In the initial phase of data cleaning and preparations, we performed the following action;
+  1. Data loading and Inspection
+  2. Handling missing variables
+  3. Data Cleaning and Formatting
+
+  ### Exploratory Data Analysis
+  EDA involved the exploratory of the data to anser some questions about data such as;
+  
+  #### For Sales Data
+  1. What is the total sales for each product category?
+  2. What is the number of sales transactions in each region?
+  3. What is the highest selling product by total sales?
+  4. What is the average of the total sales by product?
+  5. What is the maximum quantity by product?
+  6. What is the minimum quantity by product?
+  7. What is the total revenue per product?
+  8. Who are the 5 top customers by total puchase amount?
+  9. What are the monthly sales total for the current year?
+  10. The product with less sales by month.
+
+  #### For Customer Data
+  1. What is the total number of customers from each region?
+  2. What is the most popular subscription type by the number of customers?
+  3. What is the average subscription duration for all customers?
+  4. How many customers caanceled their subscription within 6 months?
+  5. How many customers have a subscription longer than 12 months?
+  6. What is the total revenue by subscription type?
+  7. What are the top 3 regions by subscription cancellations?
+  8. How many active and canceled subscription is available?
+  9. What region has the highest revenue?
+  10. Who are the top 5 custonmers by revenue?
+      
+  ### Data Analysis
+  This is where we include some basic lines of codes, queries or even some of the DAX expressions ued during your analysis;
+  
+  Select * From Table Name = SalesData
+
+  Select * From Table Name = CustomerData
+
+  ### Data Visualization
+
+ 
+  
