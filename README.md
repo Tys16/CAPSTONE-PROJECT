@@ -98,12 +98,114 @@ The main source of data used here are the Data Sales.csv and Customer.csv and th
   10. Who are the top 5 custonmers by revenue?
       
   ### Data Analysis
-  This is where we include some basic lines of codes, queries or even some of the DAX expressions ued during your analysis;
+  This is where we include some basic lines of codes, queries or even some of the DAX expressions used during your analysis;
 
-  Select * from [LITA Capstone Sales Data] = SalesData
+```SQL
+Select * from [Capstone Sales Data]
 
-  Select * From [LITA Capstone Customer Data] = CustomerData
+---------Retrieve the Total Sales for each Product Category---------
+Select PRODUCT,SUM(quantity * unitprice) as Total_Sales
+From [Capstone Sales Data]
+group by PRODUCT;
 
+
+---------Find the Number of Sales Transactions in Each Region---------
+Select REGION, COUNT(quantity * unitprice) as Total_Sales
+from [Capstone Sales Data]
+Group by REGION;
+
+
+---------Find the highest selling Product by Total Sales Value-------
+Select PRODUCT, SUM(quantity * unitprice) as 'Total_Sales'
+from [Capstone Sales Data]
+Group by PRODUCT
+Order by Total_Sales DESC
+
+
+---------Calculate Total Revenue Per Product-------------
+Select PRODUCT, SUM(quantity * unitprice) as 'Total_Revenue'
+from [Capstone Sales Data]
+Group by PRODUCT;
+
+
+--------Calculate Monthly Sales Totals for the Current Year------
+Select MONTH(OrderDate) as Month,
+SUM(quantity * unitprice) as 'Total_Sales'
+from [Capstone Sales Data]
+where YEAR(OrderDate)= 2024
+Group by MONTH(OrderDate)
+Order by MONTH;
+
+
+----------Find the Top 5 Customers by Total Purchase Amount-----------
+Select Customer_Id,
+SUM(quantity * unitprice) as 'Total_Sales'
+from [Capstone Sales Data]
+Group by Customer_Id
+Order by Total_Sales DESC
+
+
+------------Calculate the Percentage of Total_Sales contributed by each Region
+Select Region, SUM(quantity * unitprice) as Region_Sales,
+SUM(quantity * unitprice) *1.0/ (Select SUM(quantity * unitprice) 
+from [Capstone Sales Data]) * 100
+as SalesPercentage
+from [Capstone Sales Data]
+Group by Region
+Order by SalesPercentage DESC;
+
+----------Identify the Product with no Sales in the Last Quarter------------
+Select PRODUCT
+from [Capstone Sales Data]
+where PRODUCT NOT IN (Select DISTINCT PRODUCT from [Capstone Sales Data]
+where OrderDate between '2024-07-01' and '2024-09-30');
+
+
+-----------------------------------------------------------------------------------------
+SELECT * FROM [LITA Capstone Customer Data] = CustomerData
+
+Select Region, COUNT(CustomerID) as TotalCustomers
+from [LITA Capstone Customer Data]
+Group by Region;
+
+--------Most Popular Subscription Type by Number of Customers-------
+Select SubscriptionType, COUNT(CustomerID) as NumCustomers
+From [LITA Capstone Customer Data]
+Group by SubscriptionType
+Order by NumCustomers DESC
+
+ -------Customers who cancelled their Subscription within 6months------
+ Select CustomerID,CustomerName,Canceled
+ From [LITA Capstone Customer Data]
+ where Canceled = 'TRUE' and MONTH(SubscriptionStart) between 1 and 6
+
+ -------- Calculate the Average Subscription Duration for all Customers-------
+ Select AVG(DATEDIFF(DAY, SubscriptionStart, SubscriptionEnd)) as AVGDuration
+ From [LITA Capstone Customer Data]
+
+ ---------Find Customers with Subscriptions longer than 12 Months----------
+ Select CustomerID,CustomerName, SubscriptionStart, SubscriptionEnd
+ From [LITA Capstone Customer Data]
+ where DATEDIFF(DAY, SubscriptionStart, SubscriptionEnd) >365;
+
+ ---------Calculate Total Revenue by Sibscription Type------
+Select SubscriptionType, SUM(Revenue) as TotalRevenue
+From [LITA Capstone Customer Data]
+Group by SubscriptionType;
+
+ ------Find the top 3 regions by Subscription Cancellations-------
+Select Region, COUNT(CustomerID) as TotalCancellations
+From [LITA Capstone Customer Data]
+where Canceled = 'True' 
+Group by Region
+Order by TotalCancellations DESC;
+
+ ------Find the Total Number of Active and Canceled Subscriptions------
+Select Canceled, COUNT(CustomerID) as SubscriptionCount
+From [LITA Capstone Customer Data]
+Group by Canceled;
+```
+  
   ### Data Visualization
 
 ![Pivot for SalesData](https://github.com/user-attachments/assets/75bb9b32-073c-4347-8ac1-6f557c6f406d)
